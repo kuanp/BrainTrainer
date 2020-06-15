@@ -31,6 +31,7 @@ public class QuestionGenerator {
                 wrongOption = generateNumber(wrongOption);
             }
 
+            pickedNumbers.add(wrongOption);
             options.add(wrongOption);
         }
 
