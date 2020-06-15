@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrainerActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/optionsLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/optionA"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#DF5E3E"
+            android:text="Button"
+            android:onClick="onOptionClick"
+            app:layout_constraintBottom_toTopOf="@id/optionC"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/optionB"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/optionC"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#03A9F4"
+            android:text="Button"
+            android:onClick="onOptionClick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/optionD"
+            app:layout_constraintTop_toBottomOf="@id/optionA" />
+
+        <Button
+            android:id="@+id/optionD"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#8BC34A"
+            android:text="Button"
+            android:onClick="onOptionClick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/optionC"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/optionB" />
+
+        <Button
+            android:id="@+id/optionB"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#C907EB"
+            android:text="Button"
+            android:onClick="onOptionClick"
+            app:layout_constraintBottom_toTopOf="@id/optionD"
+            app:layout_constraintLeft_toRightOf="@id/optionA"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="11dp"
+        android:text="5 + 1"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/optionsLayout"
+        app:layout_constraintEnd_toStartOf="@+id/scoreTextView"
+        app:layout_constraintStart_toEndOf="@+id/timeRemainingTextView" />
+
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="11dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#46ABDA"
+        android:text="10/12"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/optionsLayout"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/timeRemainingTextView"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="11dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="#FF9C18"
+        android:text="50s"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/optionsLayout"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/gameStateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="131dp"
+        android:text="TIMES UP! Play again?"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/optionsLayout" />
+
+    <Button
+        android:id="@+id/playAgainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="151dp"
+        android:text="Play Again"
+        android:onClick="onPlayAgainButtonClicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameStateTextView" />
+
+    <TextView
+        android:id="@+id/correctnessTextView"
+        android:layout_width="134dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="130dp"
+        android:text="@string/is_correct"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
